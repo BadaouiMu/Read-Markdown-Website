@@ -1,0 +1,62 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown File List</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #232323; /* Set a slightly darker overall background color */
+            color: #d4d4d4; /* Set default dark mode text color */
+            font-family: Arial, sans-serif; /* Set a readable font */
+        }
+        header {
+            background-color: #004080; /* Set a softer blue background color for the header */
+            padding: 15px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            color: #fff; /* Set white color for the header text */
+        }
+        main {
+            max-width: 800px; /* Set maximum width for better readability */
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #2d2d2d; /* Set a slightly darker background color for content */
+            border-radius: 5px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            color: #0066cc; /* Set links to a softer blue color */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline; /* Add underline on hover for links */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Markdown File List</h1>
+    </header>
+    <main>
+        <ul>
+            {% for md_file in md_files %}
+                <li><a href="{{ url_for('preview', filename=md_file) }}">{{ md_file }}</a></li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>

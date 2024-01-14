@@ -1,0 +1,58 @@
+<!-- templates/preview.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Preview</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #232323; /* Set a slightly darker overall background color */
+            color: #d4d4d4; /* Set default dark mode text color */
+            max-width: 800px; /* Set maximum width for better readability */
+            margin: 0 auto; /* Center the content */
+            font-size: 18px; /* Set a larger font size for the content */
+            line-height: 1.6; /* Set line height for better readability */
+        }
+        div {
+            background-color: #2d2d2d; /* Set a slightly darker background color for content */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre {
+            background-color: #383838; /* Set a less darker background color for code blocks */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #d4d4d4; /* Set text color for code blocks */
+            margin-top: 15px; /* Add space above code blocks */
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 15px; /* Add space above tables */
+        }
+        th, td {
+            border: 2px solid #444; /* Set a slightly thicker border color for table cells */
+            padding: 12px; /* Increase padding for table cells */
+            text-align: left;
+        }
+        h1, h2 {
+            border-bottom: 2px solid #444; /* Add a thicker line under h1 and h2 titles */
+            padding-bottom: 5px; /* Adjust padding for better spacing */
+        }
+        a {
+            color: #0366d6; /* Set links to a lighter blue color */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        {{ content|safe }}
+    </div>
+</body>
+</html>
